@@ -1,6 +1,6 @@
 {
   "id": "ba4383cf-5741-4fae-b492-c4788f462bb4",
-  "realm": "bitfever",
+  "realm": "tradalia",
   "notBefore": 0,
   "defaultSignatureAlgorithm": "RS256",
   "revokeRefreshToken": false,
@@ -47,7 +47,7 @@
     "realm": [
       {
         "id": "87851df2-a5e6-4559-8ed3-eb12dfe378d7",
-        "name": "default-roles-bitfever",
+        "name": "default-roles-tradalia",
         "description": "${role_default-roles}",
         "composite": true,
         "composites": {
@@ -325,7 +325,7 @@
           "attributes": {}
         }
       ],
-      "bitfever-frontend": [
+      "tradalia-frontend": [
         {
           "id": "42942732-21e6-4f44-8853-b6c91d0a16fa",
           "name": "user",
@@ -456,7 +456,7 @@
           "attributes": {}
         }
       ],
-      "bitfever-backend": [
+      "tradalia-backend": [
         {
           "id": "6d862045-9b60-4841-8357-9cdf13690a0e",
           "name": "service",
@@ -472,7 +472,7 @@
   "groups": [],
   "defaultRole": {
     "id": "87851df2-a5e6-4559-8ed3-eb12dfe378d7",
-    "name": "default-roles-bitfever",
+    "name": "default-roles-tradalia",
     "description": "${role_default-roles}",
     "composite": true,
     "clientRole": false,
@@ -521,15 +521,15 @@
     {
       "id": "daaf05e5-9683-4dbf-938d-b70def7b9690",
       "createdTimestamp": 1698166045795,
-      "username": "service-account-bitfever-backend",
+      "username": "service-account-tradalia-backend",
       "enabled": true,
       "totp": false,
       "emailVerified": false,
-      "serviceAccountClientId": "bitfever-backend",
+      "serviceAccountClientId": "tradalia-backend",
       "disableableCredentialTypes": [],
       "requiredActions": [],
       "realmRoles": [
-        "default-roles-bitfever"
+        "default-roles-tradalia"
       ],
       "notBefore": 0,
       "groups": []
@@ -560,13 +560,13 @@
       "clientId": "account",
       "name": "${client_account}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/bitfever/account/",
+      "baseUrl": "/realms/tradalia/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/bitfever/account/*"
+        "/realms/tradalia/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -604,13 +604,13 @@
       "clientId": "account-console",
       "name": "${client_account-console}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/bitfever/account/",
+      "baseUrl": "/realms/tradalia/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/bitfever/account/*"
+        "/realms/tradalia/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -696,7 +696,7 @@
     },
     {
       "id": "80e39391-dfd2-445a-86ba-7c7f6047117d",
-      "clientId": "bitfever-backend",
+      "clientId": "tradalia-backend",
       "name": "",
       "description": "",
       "rootUrl": "",
@@ -798,7 +798,7 @@
     },
     {
       "id": "ae571ebd-8124-46f8-b103-a1959960959c",
-      "clientId": "bitfever-frontend",
+      "clientId": "tradalia-frontend",
       "name": "",
       "description": "",
       "rootUrl": "",
@@ -809,10 +809,10 @@
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "https://bitfever-server:8443/*"
+        "https://tradalia-server:8443/*"
       ],
       "webOrigins": [
-        "https://bitfever-server:8443"
+        "https://tradalia-server:8443"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -934,13 +934,13 @@
       "clientId": "security-admin-console",
       "name": "${client_security-admin-console}",
       "rootUrl": "${authAdminUrl}",
-      "baseUrl": "/admin/bitfever/console/",
+      "baseUrl": "/admin/tradalia/console/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/admin/bitfever/console/*"
+        "/admin/tradalia/console/*"
       ],
       "webOrigins": [
         "+"

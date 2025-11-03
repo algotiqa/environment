@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIR="$( cd "$(dirname "$0")" ; pwd -P )"
-CONTAINER_NAME="bitfever-rabbitmq"
+CONTAINER_NAME="tradalia-rabbitmq"
 
 runPodmanContainer(){
     if [[ $(podman ps --filter "name=^/$CONTAINER_NAME$" --format '{{.Names}}') == ${CONTAINER_NAME} ]]; then
@@ -19,7 +19,7 @@ runPodmanContainer(){
 	podman run -d \
 		--name ${CONTAINER_NAME} \
 		--restart always \
-		--hostname bitfever \
+		--hostname tradalia \
 		-p 8451:15672 \
 		-p 8450:5672 \
 		-e RABBITMQ_DEFAULT_USER=rabbit-admin \

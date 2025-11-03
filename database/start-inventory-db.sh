@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIR="$( cd "$(dirname "$0")" ; pwd -P )"
-CONTAINER_NAME="bitfever-inventory-db"
+CONTAINER_NAME="tradalia-inventory-db"
 
 runPodmanContainer(){
     if [[ $(podman ps --filter "name=^/$CONTAINER_NAME$" --format '{{.Names}}') == ${CONTAINER_NAME} ]]; then

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 dbName=datastore
-dbUser=bitfever
-dbPass=bitfever
+dbUser=tradalia
+dbPass=tradalia
 dbPort=3410
 
 psql -h localhost -p $dbPort -U postgres << EOF

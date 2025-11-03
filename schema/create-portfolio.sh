@@ -1,8 +1,8 @@
 #!/bin/bash
 
 dbName=portfolio
-dbUser=bitfever
-dbPass=bitfever
+dbUser=tradalia
+dbPass=tradalia
 dbPort=3401
 
 mysql --user=root --password=root --host=127.0.0.1 --port=$dbPort << EOF

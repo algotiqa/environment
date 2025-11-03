@@ -1,11 +1,11 @@
 #!/bin/bash
 
 dbName=inventory
-dbUser=bitfever
-dbPass=bitfever
+dbUser=tradalia
+dbPass=tradalia
 
 mysql --user=root --password=root --host=127.0.0.1 --port=3400 << EOF
-drop database if exists ${dbName}; 
+drop database if exists ${dbName};
 create database ${dbName} character set = 'utf8' collate = 'utf8_bin';
 
 grant references,alter,create,drop,index,select,update,delete,insert on ${dbName}.* to '${dbUser}'@'localhost' identified by '${dbPass}';

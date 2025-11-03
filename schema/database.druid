@@ -2,8 +2,8 @@
 
 <project version="2">
 	<attribs>
-		<attrib name="build">267</attrib>
-		<attrib name="serial">54707</attrib>
+		<attrib name="build">269</attrib>
+		<attrib name="serial">54717</attrib>
 	</attribs>
 	<database>
 		<attribs>
@@ -2164,9 +2164,9 @@
 					</fieldAttribs>
 					<attribs>
 						<attrib name="comment"/>
-						<attrib name="name">in_sample_to</attrib>
-						<attrib name="refField">0</attrib>
 						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">in_sample_to</attrib>
 						<attrib name="id">54490</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -6790,9 +6790,9 @@ order by cc</attrib>
 					</fieldAttribs>
 					<attribs>
 						<attrib name="comment"/>
-						<attrib name="name">currency_symbol</attrib>
-						<attrib name="refField">0</attrib>
 						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">currency_symbol</attrib>
 						<attrib name="id">53698</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -7496,6 +7496,90 @@ order by cc</attrib>
 						<attrib name="onUpdate">n</attrib>
 						<attrib name="refTable">0</attrib>
 						<attrib name="type">8774</attrib>
+					</attribs>
+					<modsConfig/>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="name">in_sample_from</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="matchType">s</attrib>
+						<attrib name="id">54709</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">5</attrib>
+					</attribs>
+					<modsConfig/>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">in_sample_to</attrib>
+						<attrib name="id">54711</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">5</attrib>
+					</attribs>
+					<modsConfig/>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="name">engine_code</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="matchType">s</attrib>
+						<attrib name="id">54715</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">8773</attrib>
 					</attribs>
 					<modsConfig/>
 				</field>
@@ -17363,8 +17447,8 @@ FROM system_data_1m where time &gt;= '2014-01-01T00:00:00-6' and symbol='ESM14'<
 							<attrib name="83">true</attrib>
 							<attrib name="17">false</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="51">false</attrib>
 							<attrib name="15">true</attrib>
+							<attrib name="51">false</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">false</attrib>
@@ -17392,8 +17476,8 @@ FROM system_data_1m where time &gt;= '2014-01-01T00:00:00-6' and symbol='ESM14'<
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="51">false</attrib>
 							<attrib name="15">false</attrib>
+							<attrib name="51">false</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">true</attrib>
@@ -17421,8 +17505,8 @@ FROM system_data_1m where time &gt;= '2014-01-01T00:00:00-6' and symbol='ESM14'<
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="51">true</attrib>
 							<attrib name="15">false</attrib>
+							<attrib name="51">true</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">false</attrib>
@@ -17450,8 +17534,8 @@ FROM system_data_1m where time &gt;= '2014-01-01T00:00:00-6' and symbol='ESM14'<
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="51">false</attrib>
 							<attrib name="15">false</attrib>
+							<attrib name="51">false</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">false</attrib>
@@ -17490,8 +17574,8 @@ FROM system_data_1m where time &gt;= '2014-01-01T00:00:00-6' and symbol='ESM14'<
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="51">false</attrib>
 							<attrib name="15">false</attrib>
+							<attrib name="51">false</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">false</attrib>
@@ -17519,8 +17603,8 @@ FROM system_data_1m where time &gt;= '2014-01-01T00:00:00-6' and symbol='ESM14'<
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="51">false</attrib>
 							<attrib name="15">false</attrib>
+							<attrib name="51">false</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">false</attrib>
@@ -17548,8 +17632,8 @@ FROM system_data_1m where time &gt;= '2014-01-01T00:00:00-6' and symbol='ESM14'<
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="51">false</attrib>
 							<attrib name="15">false</attrib>
+							<attrib name="51">false</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">false</attrib>

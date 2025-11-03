@@ -1,7 +1,7 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Portfolio Trader
 -- ===
--- === Build : 266
+-- === Build : 269
 -- ======================================================================
 
 CREATE TABLE portfolio
@@ -58,6 +58,9 @@ CREATE TABLE trading_system
     last_num_trades     int,
     portfolio_id        int,
     timezone            varchar(32)    not null,
+    in_sample_from      int            not null,
+    in_sample_to        int            not null,
+    engine_code         varchar(16)    not null,
 
     primary key(id),
 
