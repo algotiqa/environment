@@ -22,7 +22,7 @@ runPodmanContainer(){
 		-v ${DIR}/collector-data:/var/lib/postgresql/data \
 		-p 3410:5432 \
 		-e POSTGRES_PASSWORD=postgres \
-		docker://timescale/timescaledb:2.17.0-pg16
+		docker://timescale/timescaledb:2.23.1-pg16
 
     if [[ $? == 0 ]]; then
         echo
