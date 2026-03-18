@@ -1,13 +1,13 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Inventory Server
 -- ===
--- === Build : 266
+-- === Build : 277
 -- ======================================================================
 
 CREATE TABLE trading_session
   (
     id          int           auto_increment,
-    username    varchar(32)   not null,
+    username    varchar(32),
     name        varchar(32)   not null,
     config      text          not null,
     created_at  datetime      not null,
@@ -150,6 +150,7 @@ CREATE TABLE data_product
     product_type      char(2)       not null,
     months            varchar(16),
     rollover_trigger  varchar(16),
+    session_start     int           not null,
     created_at        datetime      not null,
     updated_at        datetime,
 

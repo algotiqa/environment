@@ -2,8 +2,8 @@
 
 <project version="2">
 	<attribs>
-		<attrib name="build">274</attrib>
-		<attrib name="serial">55193</attrib>
+		<attrib name="build">278</attrib>
+		<attrib name="serial">55422</attrib>
 	</attribs>
 	<database>
 		<attribs>
@@ -1259,7 +1259,7 @@
 			<query>
 				<attribs>
 					<attrib name="name">-UnNamed-</attrib>
-					<attrib name="sqlCode">alter table trading_system add column finalized int not null</attrib>
+					<attrib name="sqlCode">alter table data_product add column session_start int not null</attrib>
 				</attribs>
 				<modsConfig/>
 			</query>
@@ -2346,7 +2346,7 @@
 							<attrib name="85">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
+							<attrib name="17">false</attrib>
 							<attrib name="16">false</attrib>
 							<attrib name="15">false</attrib>
 							<attrib name="339"/>
@@ -3715,6 +3715,34 @@
 						<attrib name="onUpdate">n</attrib>
 						<attrib name="refTable">0</attrib>
 						<attrib name="type">2212</attrib>
+					</attribs>
+					<modsConfig/>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">session_start</attrib>
+						<attrib name="id">55411</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">5</attrib>
 					</attribs>
 					<modsConfig/>
 				</field>
@@ -8863,9 +8891,9 @@ order by cc</attrib>
 					</fieldAttribs>
 					<attribs>
 						<attrib name="comment"/>
-						<attrib name="name">id</attrib>
-						<attrib name="refField">0</attrib>
 						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">id</attrib>
 						<attrib name="id">54812</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -8891,9 +8919,9 @@ order by cc</attrib>
 					</fieldAttribs>
 					<attribs>
 						<attrib name="comment"/>
-						<attrib name="name">trading_system_id</attrib>
-						<attrib name="refField">23277</attrib>
 						<attrib name="matchType">s</attrib>
+						<attrib name="refField">23277</attrib>
+						<attrib name="name">trading_system_id</attrib>
 						<attrib name="id">54808</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -8919,9 +8947,9 @@ order by cc</attrib>
 					</fieldAttribs>
 					<attribs>
 						<attrib name="comment"/>
-						<attrib name="name">period</attrib>
-						<attrib name="refField">0</attrib>
 						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">period</attrib>
 						<attrib name="id">54816</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -10621,6 +10649,34 @@ order by cc</attrib>
 						</attribs>
 						<modsConfig/>
 					</field>
+					<field>
+						<fieldAttribs>
+							<attribs>
+								<attrib name="86">false</attrib>
+								<attrib name="85">false</attrib>
+								<attrib name="84">false</attrib>
+								<attrib name="83">false</attrib>
+								<attrib name="17">true</attrib>
+								<attrib name="16">false</attrib>
+								<attrib name="15">false</attrib>
+								<attrib name="339"/>
+								<attrib name="338">false</attrib>
+								<attrib name="340">false</attrib>
+							</attribs>
+						</fieldAttribs>
+						<attribs>
+							<attrib name="comment"/>
+							<attrib name="matchType">s</attrib>
+							<attrib name="refField">0</attrib>
+							<attrib name="name">session_start</attrib>
+							<attrib name="id">55415</attrib>
+							<attrib name="onDelete">n</attrib>
+							<attrib name="onUpdate">n</attrib>
+							<attrib name="refTable">0</attrib>
+							<attrib name="type">5</attrib>
+						</attribs>
+						<modsConfig/>
+					</field>
 				</table>
 				<table>
 					<vars>
@@ -11922,8 +11978,36 @@ order by cc</attrib>
 							<attrib name="comment"/>
 							<attrib name="matchType">s</attrib>
 							<attrib name="refField">0</attrib>
-							<attrib name="name">curr_day</attrib>
+							<attrib name="name">session_start</attrib>
 							<attrib name="id">47884</attrib>
+							<attrib name="onDelete">n</attrib>
+							<attrib name="onUpdate">n</attrib>
+							<attrib name="refTable">0</attrib>
+							<attrib name="type">5</attrib>
+						</attribs>
+						<modsConfig/>
+					</field>
+					<field>
+						<fieldAttribs>
+							<attribs>
+								<attrib name="86">false</attrib>
+								<attrib name="85">false</attrib>
+								<attrib name="84">false</attrib>
+								<attrib name="83">false</attrib>
+								<attrib name="17">true</attrib>
+								<attrib name="16">false</attrib>
+								<attrib name="15">false</attrib>
+								<attrib name="339"/>
+								<attrib name="338">false</attrib>
+								<attrib name="340">false</attrib>
+							</attribs>
+						</fieldAttribs>
+						<attribs>
+							<attrib name="comment"/>
+							<attrib name="name">curr_day</attrib>
+							<attrib name="refField">0</attrib>
+							<attrib name="matchType">s</attrib>
+							<attrib name="id">55420</attrib>
 							<attrib name="onDelete">n</attrib>
 							<attrib name="onUpdate">n</attrib>
 							<attrib name="refTable">0</attrib>
@@ -13288,7 +13372,7 @@ CREATE INDEX user_time_index_60m ON user_data_60m(symbol, time DESC);
 			<query>
 				<attribs>
 					<attrib name="name">User 1m</attrib>
-					<attrib name="sqlCode">SELECT time at time zone 'America/Chicago',open,high,low,close FROM user_data_1m where time &lt;= '2010-01-19T00:00:00-6' and symbol='@ES'</attrib>
+					<attrib name="sqlCode">SELECT time at time zone 'America/Chicago',open,high,low,close FROM user_data_1440m where time &gt;= '2010-01-19T00:00:00-6' and symbol='@ES'</attrib>
 				</attribs>
 				<modsConfig/>
 			</query>

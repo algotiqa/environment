@@ -1,7 +1,7 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Data Collector
 -- ===
--- === Build : 258
+-- === Build : 278
 -- ======================================================================
 
 CREATE TABLE data_product
@@ -17,6 +17,7 @@ CREATE TABLE data_product
     status                  tinyint       not null,
     months                  varchar(16),
     rollover_trigger        varchar(16),
+    session_start           int           not null,
 
     primary key(id),
     unique(username,connection_code,symbol)
@@ -120,6 +121,7 @@ CREATE TABLE download_job
     priority            tinyint       not null,
     user_connection     varchar(64),
     product_timezone    varchar(64)   not null,
+    session_start       int           not null,
     curr_day            int           not null,
     tot_days            int           not null,
     error               text,
