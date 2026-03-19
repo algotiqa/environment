@@ -1,7 +1,7 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Inventory Server
 -- ===
--- === Build : 277
+-- === Build : 279
 -- ======================================================================
 
 CREATE TABLE trading_session
@@ -143,6 +143,7 @@ CREATE TABLE data_product
     id                int           auto_increment,
     exchange_id       int           not null,
     connection_id     int           not null,
+    session_id        int           not null,
     username          varchar(32)   not null,
     symbol            varchar(16)   not null,
     name              varchar(64)   not null,
@@ -150,7 +151,6 @@ CREATE TABLE data_product
     product_type      char(2)       not null,
     months            varchar(16),
     rollover_trigger  varchar(16),
-    session_start     int           not null,
     created_at        datetime      not null,
     updated_at        datetime,
 
@@ -158,7 +158,8 @@ CREATE TABLE data_product
     unique(connection_id,username,symbol),
 
     foreign key(exchange_id) references exchange(id),
-    foreign key(connection_id) references connection(id)
+    foreign key(connection_id) references connection(id),
+    foreign key(session_id) references trading_session(id)
   )
  ENGINE = InnoDB ;
 
