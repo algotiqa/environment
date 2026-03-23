@@ -24,4 +24,4 @@ url,           VARCHAR,    N
 4	1	CBOT	Chicago Board of Trade	America/Chicago	https://www.cmegroup.com/
 5	1	CBOE	CBOE Global Markets Inc.	America/Chicago	https://www.cboe.com/
 6	2	EUREX	European Exchange	Europe/Rome	https://www.eurex.com/
-7	1	IFUS	ICE Futures U.S.	America/New_York	https://www.ice.com/futures-us/
+7	1	ICEUS	ICE Futures U.S.	America/New_York	https://www.ice.com/futures-us/
