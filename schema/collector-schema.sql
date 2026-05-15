@@ -1,7 +1,30 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Data Collector
 -- ===
--- === Build : 285
+-- === Build : 291
+-- ======================================================================
+
+CREATE TABLE data_product
+  (
+    id                      int,
+    username                varchar(32)   not null,
+    connection_code         varchar(8)    not null,
+    system_code             varchar(8)    not null,
+    symbol                  varchar(16)   not null,
+    supports_multiple_data  tinyint       not null,
+    connected               tinyint       not null,
+    timezone                varchar(32)   not null,
+    status                  tinyint       not null,
+    months                  varchar(16),
+    rollover_trigger        varchar(16),
+    trading_session_id      int           not null,
+    trading_session_config  text          not null,
+
+    primary key(id),
+    unique(username,connection_code,symbol)
+  )
+ ENGINE = InnoDB ;
+
 -- ======================================================================
 
 CREATE TABLE data_block
@@ -22,23 +45,6 @@ CREATE TABLE data_block
 
 -- ======================================================================
 
-CREATE TABLE trading_session
-  (
-    id          int           auto_increment,
-    username    varchar(32),
-    name        varchar(64)   not null,
-    session     text          not null,
-    created_at  datetime      not null,
-    updated_at  datetime,
-
-    primary key(id)
-  )
- ENGINE = InnoDB ;
-
-CREATE INDEX trading_sessionIDX1 ON trading_session(username);
-
--- ======================================================================
-
 CREATE TABLE broker_product
   (
     id                  int,
@@ -56,31 +62,6 @@ CREATE TABLE broker_product
  ENGINE = InnoDB ;
 
 CREATE INDEX broker_productIDX1 ON broker_product(username);
-
--- ======================================================================
-
-CREATE TABLE data_product
-  (
-    id                      int,
-    username                varchar(32)   not null,
-    connection_code         varchar(8)    not null,
-    system_code             varchar(8)    not null,
-    symbol                  varchar(16)   not null,
-    supports_multiple_data  tinyint       not null,
-    connected               tinyint       not null,
-    timezone                varchar(32)   not null,
-    status                  tinyint       not null,
-    months                  varchar(16),
-    rollover_trigger        varchar(16),
-    trading_session_id      int           not null,
-    trading_session_config  text          not null,
-
-    primary key(id),
-    unique(username,connection_code,symbol),
-
-    foreign key(trading_session_id) references trading_session(id)
-  )
- ENGINE = InnoDB ;
 
 -- ======================================================================
 

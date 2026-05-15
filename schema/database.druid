@@ -2,8 +2,8 @@
 
 <project version="2">
 	<attribs>
-		<attrib name="build">285</attrib>
-		<attrib name="serial">56643</attrib>
+		<attrib name="build">292</attrib>
+		<attrib name="serial">57285</attrib>
 	</attribs>
 	<database>
 		<attribs>
@@ -1334,9 +1334,9 @@
 					<attribs>
 						<attrib name="name">data_product</attrib>
 						<attrib name="colorId">18080</attrib>
-						<attrib name="locY">283</attrib>
+						<attrib name="locY">390</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">17</attrib>
+						<attrib name="locX">23</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
@@ -1347,9 +1347,9 @@
 					<attribs>
 						<attrib name="name">broker_product</attrib>
 						<attrib name="colorId">18080</attrib>
-						<attrib name="locY">313</attrib>
+						<attrib name="locY">381</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">656</attrib>
+						<attrib name="locX">630</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
@@ -1358,24 +1358,11 @@
 				</erEntity>
 				<erEntity>
 					<attribs>
-						<attrib name="name">broker_instrument</attrib>
-						<attrib name="colorId">18080</attrib>
-						<attrib name="locY">674</attrib>
-						<attrib name="details">-</attrib>
-						<attrib name="locX">645</attrib>
-					</attribs>
-					<modsConfig/>
-					<tables>
-						<table id="17360"/>
-					</tables>
-				</erEntity>
-				<erEntity>
-					<attribs>
 						<attrib name="name">currency</attrib>
 						<attrib name="colorId">18080</attrib>
-						<attrib name="locY">478</attrib>
+						<attrib name="locY">800</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">463</attrib>
+						<attrib name="locX">496</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
@@ -1386,9 +1373,9 @@
 					<attribs>
 						<attrib name="name">connection</attrib>
 						<attrib name="colorId">18080</attrib>
-						<attrib name="locY">686</attrib>
+						<attrib name="locY">417</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">351</attrib>
+						<attrib name="locX">296</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
@@ -1412,9 +1399,9 @@
 					<attribs>
 						<attrib name="name">trading_session</attrib>
 						<attrib name="colorId">18080</attrib>
-						<attrib name="locY">27</attrib>
+						<attrib name="locY">104</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">42</attrib>
+						<attrib name="locX">39</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
@@ -1425,9 +1412,9 @@
 					<attribs>
 						<attrib name="name">exchange</attrib>
 						<attrib name="colorId">18080</attrib>
-						<attrib name="locY">360</attrib>
+						<attrib name="locY">834</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">258</attrib>
+						<attrib name="locX">251</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
@@ -1438,13 +1425,26 @@
 					<attribs>
 						<attrib name="name">agent_profile</attrib>
 						<attrib name="colorId">18080</attrib>
-						<attrib name="locY">23</attrib>
+						<attrib name="locY">81</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">677</attrib>
+						<attrib name="locX">665</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
 						<table id="37587"/>
+					</tables>
+				</erEntity>
+				<erEntity>
+					<attribs>
+						<attrib name="name">currency_history</attrib>
+						<attrib name="colorId">18080</attrib>
+						<attrib name="locY">834</attrib>
+						<attrib name="details">-</attrib>
+						<attrib name="locX">733</attrib>
+					</attribs>
+					<modsConfig/>
+					<tables>
+						<table id="51981"/>
 					</tables>
 				</erEntity>
 			</erView>
@@ -3638,7 +3638,12 @@
 							<t>SO: Soft</t>
 						</p>
 						<p>
-							<t>FX: Currency</t>
+							<t>FX: Currency
+</t>
+						</p>
+						<p>
+							<t>CR: Crypto
+</t>
 						</p>
 					</docs>
 				</field>
@@ -6063,10 +6068,7 @@ order by t1.entry_date</attrib>
 			<query>
 				<attribs>
 					<attrib name="name">Daily count</attrib>
-					<attrib name="sqlCode">SELECT name, count(*) cc, sum(gross_profit), sum(trades) FROM daily_return dr join trading_system ts on dr.trading_system_id=ts.id
-where day&gt;=20240101 and day&lt;20250101
-group by name
-order by cc</attrib>
+					<attrib name="sqlCode">select count(*) from trade</attrib>
 				</attribs>
 				<modsConfig/>
 			</query>
@@ -6133,9 +6135,9 @@ order by cc</attrib>
 					<attribs>
 						<attrib name="name">trading_system</attrib>
 						<attrib name="colorId">42618</attrib>
-						<attrib name="locY">18</attrib>
+						<attrib name="locY">59</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">345</attrib>
+						<attrib name="locX">350</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
@@ -6146,9 +6148,9 @@ order by cc</attrib>
 					<attribs>
 						<attrib name="name">trading_filter</attrib>
 						<attrib name="colorId">42618</attrib>
-						<attrib name="locY">167</attrib>
+						<attrib name="locY">18</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">615</attrib>
+						<attrib name="locX">645</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
@@ -6159,13 +6161,39 @@ order by cc</attrib>
 					<attribs>
 						<attrib name="name">trade</attrib>
 						<attrib name="colorId">42618</attrib>
-						<attrib name="locY">417</attrib>
+						<attrib name="locY">423</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">31</attrib>
+						<attrib name="locX">635</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
 						<table id="33102"/>
+					</tables>
+				</erEntity>
+				<erEntity>
+					<attribs>
+						<attrib name="name">daily_return</attrib>
+						<attrib name="colorId">42618</attrib>
+						<attrib name="locY">338</attrib>
+						<attrib name="details">-</attrib>
+						<attrib name="locX">44</attrib>
+					</attribs>
+					<modsConfig/>
+					<tables>
+						<table id="48871"/>
+					</tables>
+				</erEntity>
+				<erEntity>
+					<attribs>
+						<attrib name="name">live_period</attrib>
+						<attrib name="colorId">42618</attrib>
+						<attrib name="locY">641</attrib>
+						<attrib name="details">-</attrib>
+						<attrib name="locX">45</attrib>
+					</attribs>
+					<modsConfig/>
+					<tables>
+						<table id="54804"/>
 					</tables>
 				</erEntity>
 			</erView>
@@ -10135,14 +10163,21 @@ order by cc</attrib>
 			<query>
 				<attribs>
 					<attrib name="name">-UnNamed-</attrib>
-					<attrib name="sqlCode">ALTER TABLE data_instrument ADD column virtual_instrument tinyint not null</attrib>
+					<attrib name="sqlCode">ALTER TABLE data_product DROP FOREIGN KEY data_product_ibfk_1</attrib>
 				</attribs>
 				<modsConfig/>
 			</query>
 			<query>
 				<attribs>
 					<attrib name="name">-UnNamed-</attrib>
-					<attrib name="sqlCode">ALTER TABLE data_instrument DROP COLUMN virtuale</attrib>
+					<attrib name="sqlCode">SELECT 
+    CONSTRAINT_NAME, 
+    CONSTRAINT_TYPE
+FROM 
+    INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE 
+    TABLE_NAME = 'data_product' 
+    AND CONSTRAINT_TYPE = 'FOREIGN KEY'c</attrib>
 				</attribs>
 				<modsConfig/>
 			</query>
@@ -10202,9 +10237,9 @@ order by cc</attrib>
 					<attribs>
 						<attrib name="name">data_instrument</attrib>
 						<attrib name="colorId">43889</attrib>
-						<attrib name="locY">331</attrib>
+						<attrib name="locY">352</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">335</attrib>
+						<attrib name="locX">318</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
@@ -10667,13 +10702,13 @@ order by cc</attrib>
 						<attribs>
 							<attrib name="comment"/>
 							<attrib name="matchType">s</attrib>
-							<attrib name="refField">56238</attrib>
+							<attrib name="refField">0</attrib>
 							<attrib name="name">trading_session_id</attrib>
 							<attrib name="id">55415</attrib>
 							<attrib name="onDelete">n</attrib>
 							<attrib name="onUpdate">n</attrib>
-							<attrib name="refTable">56237</attrib>
-							<attrib name="type">0</attrib>
+							<attrib name="refTable">0</attrib>
+							<attrib name="type">5</attrib>
 						</attribs>
 						<modsConfig/>
 					</field>
@@ -12096,219 +12131,6 @@ order by cc</attrib>
 							<attrib name="onUpdate">n</attrib>
 							<attrib name="refTable">0</attrib>
 							<attrib name="type">67</attrib>
-						</attribs>
-						<modsConfig/>
-					</field>
-				</table>
-				<table>
-					<vars>
-						<list>
-							<header>
-								<elem>name</elem>
-								<elem>type</elem>
-								<elem>value</elem>
-								<elem>descr</elem>
-							</header>
-						</list>
-					</vars>
-					<triggers/>
-					<rules/>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="name">trading_session</attrib>
-						<attrib name="id">56237</attrib>
-						<attrib name="schema"/>
-						<attrib name="tempPK"/>
-						<attrib name="ghost">false</attrib>
-						<attrib name="tempFK"/>
-						<attrib name="tempOther"/>
-						<attrib name="sqlCommands"/>
-					</attribs>
-					<modsConfig>
-						<SqlGenModule>
-							<mysql>
-								<idx type="l">
-									<list>
-										<header>
-											<elem type="i">id</elem>
-											<elem type="s">index</elem>
-											<elem type="s">name</elem>
-										</header>
-										<row>
-											<elem>340</elem>
-											<elem>Idx1</elem>
-											<elem/>
-										</row>
-									</list>
-								</idx>
-							</mysql>
-						</SqlGenModule>
-					</modsConfig>
-					<field>
-						<fieldAttribs>
-							<attribs>
-								<attrib name="86">false</attrib>
-								<attrib name="85">false</attrib>
-								<attrib name="84">false</attrib>
-								<attrib name="83">true</attrib>
-								<attrib name="17">false</attrib>
-								<attrib name="16">false</attrib>
-								<attrib name="15">true</attrib>
-								<attrib name="339"/>
-								<attrib name="338">false</attrib>
-								<attrib name="340">false</attrib>
-							</attribs>
-						</fieldAttribs>
-						<attribs>
-							<attrib name="comment"/>
-							<attrib name="matchType">s</attrib>
-							<attrib name="refField">0</attrib>
-							<attrib name="name">id</attrib>
-							<attrib name="id">56238</attrib>
-							<attrib name="onDelete">n</attrib>
-							<attrib name="onUpdate">n</attrib>
-							<attrib name="refTable">0</attrib>
-							<attrib name="type">5</attrib>
-						</attribs>
-						<modsConfig/>
-					</field>
-					<field>
-						<fieldAttribs>
-							<attribs>
-								<attrib name="86">false</attrib>
-								<attrib name="85">false</attrib>
-								<attrib name="84">false</attrib>
-								<attrib name="83">false</attrib>
-								<attrib name="17">false</attrib>
-								<attrib name="16">false</attrib>
-								<attrib name="15">false</attrib>
-								<attrib name="339"/>
-								<attrib name="338">false</attrib>
-								<attrib name="340">true</attrib>
-							</attribs>
-						</fieldAttribs>
-						<attribs>
-							<attrib name="comment"/>
-							<attrib name="matchType">s</attrib>
-							<attrib name="refField">0</attrib>
-							<attrib name="name">username</attrib>
-							<attrib name="id">56239</attrib>
-							<attrib name="onDelete">n</attrib>
-							<attrib name="onUpdate">n</attrib>
-							<attrib name="refTable">0</attrib>
-							<attrib name="type">26064</attrib>
-						</attribs>
-						<modsConfig/>
-					</field>
-					<field>
-						<fieldAttribs>
-							<attribs>
-								<attrib name="86">false</attrib>
-								<attrib name="85">false</attrib>
-								<attrib name="84">false</attrib>
-								<attrib name="83">false</attrib>
-								<attrib name="17">true</attrib>
-								<attrib name="16">false</attrib>
-								<attrib name="15">false</attrib>
-								<attrib name="339"/>
-								<attrib name="338">false</attrib>
-								<attrib name="340">false</attrib>
-							</attribs>
-						</fieldAttribs>
-						<attribs>
-							<attrib name="comment"/>
-							<attrib name="matchType">s</attrib>
-							<attrib name="refField">0</attrib>
-							<attrib name="name">name</attrib>
-							<attrib name="id">56240</attrib>
-							<attrib name="onDelete">n</attrib>
-							<attrib name="onUpdate">n</attrib>
-							<attrib name="refTable">0</attrib>
-							<attrib name="type">26741</attrib>
-						</attribs>
-						<modsConfig/>
-					</field>
-					<field>
-						<fieldAttribs>
-							<attribs>
-								<attrib name="86">false</attrib>
-								<attrib name="85">false</attrib>
-								<attrib name="84">false</attrib>
-								<attrib name="83">false</attrib>
-								<attrib name="17">true</attrib>
-								<attrib name="16">false</attrib>
-								<attrib name="15">false</attrib>
-								<attrib name="339"/>
-								<attrib name="338">false</attrib>
-								<attrib name="340">false</attrib>
-							</attribs>
-						</fieldAttribs>
-						<attribs>
-							<attrib name="comment"/>
-							<attrib name="matchType">s</attrib>
-							<attrib name="refField">0</attrib>
-							<attrib name="name">session</attrib>
-							<attrib name="id">56241</attrib>
-							<attrib name="onDelete">n</attrib>
-							<attrib name="onUpdate">n</attrib>
-							<attrib name="refTable">0</attrib>
-							<attrib name="type">67</attrib>
-						</attribs>
-						<modsConfig/>
-					</field>
-					<field>
-						<fieldAttribs>
-							<attribs>
-								<attrib name="86">false</attrib>
-								<attrib name="85">false</attrib>
-								<attrib name="84">false</attrib>
-								<attrib name="83">false</attrib>
-								<attrib name="17">true</attrib>
-								<attrib name="16">false</attrib>
-								<attrib name="15">false</attrib>
-								<attrib name="339"/>
-								<attrib name="338">false</attrib>
-								<attrib name="340">false</attrib>
-							</attribs>
-						</fieldAttribs>
-						<attribs>
-							<attrib name="comment"/>
-							<attrib name="matchType">s</attrib>
-							<attrib name="refField">0</attrib>
-							<attrib name="name">created_at</attrib>
-							<attrib name="id">56242</attrib>
-							<attrib name="onDelete">n</attrib>
-							<attrib name="onUpdate">n</attrib>
-							<attrib name="refTable">0</attrib>
-							<attrib name="type">46</attrib>
-						</attribs>
-						<modsConfig/>
-					</field>
-					<field>
-						<fieldAttribs>
-							<attribs>
-								<attrib name="86">false</attrib>
-								<attrib name="85">false</attrib>
-								<attrib name="84">false</attrib>
-								<attrib name="83">false</attrib>
-								<attrib name="17">false</attrib>
-								<attrib name="16">false</attrib>
-								<attrib name="15">false</attrib>
-								<attrib name="339"/>
-								<attrib name="338">false</attrib>
-								<attrib name="340">false</attrib>
-							</attribs>
-						</fieldAttribs>
-						<attribs>
-							<attrib name="comment"/>
-							<attrib name="matchType">s</attrib>
-							<attrib name="refField">0</attrib>
-							<attrib name="name">updated_at</attrib>
-							<attrib name="id">56243</attrib>
-							<attrib name="onDelete">n</attrib>
-							<attrib name="onUpdate">n</attrib>
-							<attrib name="refTable">0</attrib>
-							<attrib name="type">46</attrib>
 						</attribs>
 						<modsConfig/>
 					</field>
