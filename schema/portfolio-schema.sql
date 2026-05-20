@@ -1,7 +1,7 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Portfolio Trader
 -- ===
--- === Build : 269
+-- === Build : 295
 -- ======================================================================
 
 CREATE TABLE portfolio
@@ -144,6 +144,38 @@ CREATE TABLE daily_return
  ENGINE = InnoDB ;
 
 CREATE INDEX daily_returnIDX1 ON daily_return(trading_system_id);
+
+-- ======================================================================
+
+CREATE TABLE live_period
+  (
+    id                 int        auto_increment,
+    trading_system_id  int        not null,
+    period             datetime   not null,
+    active             tinyint    not null,
+
+    primary key(id),
+
+    foreign key(trading_system_id) references trading_system(id)
+  )
+ ENGINE = InnoDB ;
+
+CREATE INDEX live_periodIDX1 ON live_period(trading_system_id);
+
+-- ======================================================================
+
+CREATE TABLE outbox
+  (
+    id         int           auto_increment,
+    timestamp  datetime      not null,
+    exchange   varchar(64)   not null,
+    uuid       varchar(64)   not null,
+    payload    mediumblob    not null,
+    size       int           not null,
+
+    primary key(id)
+  )
+ ENGINE = InnoDB ;
 
 -- ======================================================================
 

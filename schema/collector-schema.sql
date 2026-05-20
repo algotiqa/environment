@@ -1,7 +1,7 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Data Collector
 -- ===
--- === Build : 291
+-- === Build : 296
 -- ======================================================================
 
 CREATE TABLE data_product
@@ -62,6 +62,21 @@ CREATE TABLE broker_product
  ENGINE = InnoDB ;
 
 CREATE INDEX broker_productIDX1 ON broker_product(username);
+
+-- ======================================================================
+
+CREATE TABLE outbox
+  (
+    id         int           auto_increment,
+    timestamp  datetime      not null,
+    exchange   varchar(64)   not null,
+    uuid       varchar(64)   not null,
+    payload    mediumblob    not null,
+    size       int           not null,
+
+    primary key(id)
+  )
+ ENGINE = InnoDB ;
 
 -- ======================================================================
 

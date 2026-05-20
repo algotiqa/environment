@@ -1,7 +1,7 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Inventory Server
 -- ===
--- === Build : 281
+-- === Build : 294
 -- ======================================================================
 
 CREATE TABLE trading_session
@@ -118,6 +118,21 @@ CREATE TABLE portfolio
  ENGINE = InnoDB ;
 
 CREATE INDEX portfolioIDX1 ON portfolio(username);
+
+-- ======================================================================
+
+CREATE TABLE outbox
+  (
+    id         int           auto_increment,
+    timestamp  datetime      not null,
+    exchange   varchar(64)   not null,
+    uuid       varchar(64)   not null,
+    payload    mediumblob    not null,
+    size       int           not null,
+
+    primary key(id)
+  )
+ ENGINE = InnoDB ;
 
 -- ======================================================================
 
