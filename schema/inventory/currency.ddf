@@ -1,5 +1,5 @@
 #---------------------------------------------------------
-#--- File exported in DDF format on 2026-04-30 15:51:50
+#--- File exported in DDF format on 2026-05-23 10:14:50
 #---
 #--- SELECT id,code,name,symbol,first_date,last_date,last_value,history_ended FROM inventory.currency
 #---------------------------------------------------------
@@ -20,6 +20,6 @@ last_value,    DOUBLE,     N
 history_ended, TINYINT,    N
 
 [INSERT]
-1	USD	US Dollar	$	20131125	20260429	1.0	0
-2	EUR	Euro	~20AC	20131125	20260429	0.8558021426	0
-3	GBP	British Pound Sterling	~00A3	20131125	20260429	0.7413561431	0
+1	USD	US Dollar	$	20120320	20260522	1.0	0
+2	EUR	Euro	~20AC	20120320	20260522	0.8618681283	0
+3	GBP	British Pound Sterling	~00A3	20120320	20260522	0.7445701082	0
