@@ -2,8 +2,8 @@
 
 <project version="2">
 	<attribs>
-		<attrib name="build">296</attrib>
-		<attrib name="serial">58657</attrib>
+		<attrib name="build">297</attrib>
+		<attrib name="serial">58658</attrib>
 	</attribs>
 	<database>
 		<attribs>
@@ -4928,9 +4928,9 @@
 					</fieldAttribs>
 					<attribs>
 						<attrib name="comment"/>
-						<attrib name="name">id</attrib>
-						<attrib name="refField">0</attrib>
 						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">id</attrib>
 						<attrib name="id">57289</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -9236,10 +9236,6 @@ order by t1.entry_date</attrib>
 							<elem>type</elem>
 							<elem>value</elem>
 							<elem>descr</elem>
-							<elem>name</elem>
-							<elem>type</elem>
-							<elem>value</elem>
-							<elem>descr</elem>
 						</header>
 					</list>
 				</vars>
@@ -9321,9 +9317,9 @@ order by t1.entry_date</attrib>
 					</fieldAttribs>
 					<attribs>
 						<attrib name="comment"/>
-						<attrib name="name">timestamp</attrib>
-						<attrib name="refField">0</attrib>
 						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">timestamp</attrib>
 						<attrib name="id">58625</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -9349,9 +9345,9 @@ order by t1.entry_date</attrib>
 					</fieldAttribs>
 					<attribs>
 						<attrib name="comment"/>
-						<attrib name="name">exchange</attrib>
-						<attrib name="refField">0</attrib>
 						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">exchange</attrib>
 						<attrib name="id">58626</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -9377,9 +9373,9 @@ order by t1.entry_date</attrib>
 					</fieldAttribs>
 					<attribs>
 						<attrib name="comment"/>
-						<attrib name="name">uuid</attrib>
-						<attrib name="refField">0</attrib>
 						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">uuid</attrib>
 						<attrib name="id">58627</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -9405,9 +9401,9 @@ order by t1.entry_date</attrib>
 					</fieldAttribs>
 					<attribs>
 						<attrib name="comment"/>
-						<attrib name="name">payload</attrib>
-						<attrib name="refField">0</attrib>
 						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">payload</attrib>
 						<attrib name="id">58628</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -9433,9 +9429,9 @@ order by t1.entry_date</attrib>
 					</fieldAttribs>
 					<attribs>
 						<attrib name="comment"/>
-						<attrib name="name">size</attrib>
-						<attrib name="refField">0</attrib>
 						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">size</attrib>
 						<attrib name="id">58629</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -10745,9 +10741,9 @@ WHERE
 					<attribs>
 						<attrib name="name">download_job</attrib>
 						<attrib name="colorId">43889</attrib>
-						<attrib name="locY">643</attrib>
+						<attrib name="locY">681</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">470</attrib>
+						<attrib name="locX">513</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
@@ -11274,7 +11270,7 @@ WHERE
 					<field>
 						<fieldAttribs>
 							<attribs>
-								<attrib name="86">false</attrib>
+								<attrib name="86">true</attrib>
 								<attrib name="85">false</attrib>
 								<attrib name="84">false</attrib>
 								<attrib name="83">false</attrib>
@@ -13476,14 +13472,6 @@ WHERE
 							<elem>type</elem>
 							<elem>value</elem>
 							<elem>descr</elem>
-							<elem>name</elem>
-							<elem>type</elem>
-							<elem>value</elem>
-							<elem>descr</elem>
-							<elem>name</elem>
-							<elem>type</elem>
-							<elem>value</elem>
-							<elem>descr</elem>
 						</header>
 					</list>
 				</vars>
@@ -13537,9 +13525,9 @@ WHERE
 					</fieldAttribs>
 					<attribs>
 						<attrib name="comment"/>
-						<attrib name="name">id</attrib>
-						<attrib name="refField">0</attrib>
 						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">id</attrib>
 						<attrib name="id">58638</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -18407,8 +18395,8 @@ FROM system_data_1m where time &gt;= '2014-01-01T00:00:00-6' and symbol='ESM14'<
 							<attrib name="83">true</attrib>
 							<attrib name="17">false</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="51">false</attrib>
 							<attrib name="15">true</attrib>
+							<attrib name="51">false</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">false</attrib>
@@ -18436,8 +18424,8 @@ FROM system_data_1m where time &gt;= '2014-01-01T00:00:00-6' and symbol='ESM14'<
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="51">false</attrib>
 							<attrib name="15">false</attrib>
+							<attrib name="51">false</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">true</attrib>
@@ -18465,8 +18453,8 @@ FROM system_data_1m where time &gt;= '2014-01-01T00:00:00-6' and symbol='ESM14'<
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="51">true</attrib>
 							<attrib name="15">false</attrib>
+							<attrib name="51">true</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">false</attrib>
@@ -18494,8 +18482,8 @@ FROM system_data_1m where time &gt;= '2014-01-01T00:00:00-6' and symbol='ESM14'<
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="51">false</attrib>
 							<attrib name="15">false</attrib>
+							<attrib name="51">false</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">false</attrib>
@@ -18534,8 +18522,8 @@ FROM system_data_1m where time &gt;= '2014-01-01T00:00:00-6' and symbol='ESM14'<
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="51">false</attrib>
 							<attrib name="15">false</attrib>
+							<attrib name="51">false</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">false</attrib>
@@ -18563,8 +18551,8 @@ FROM system_data_1m where time &gt;= '2014-01-01T00:00:00-6' and symbol='ESM14'<
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="51">false</attrib>
 							<attrib name="15">false</attrib>
+							<attrib name="51">false</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">false</attrib>
@@ -18592,8 +18580,8 @@ FROM system_data_1m where time &gt;= '2014-01-01T00:00:00-6' and symbol='ESM14'<
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="51">false</attrib>
 							<attrib name="15">false</attrib>
+							<attrib name="51">false</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">false</attrib>
