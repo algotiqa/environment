@@ -2,8 +2,8 @@
 
 <project version="2">
 	<attribs>
-		<attrib name="build">300</attrib>
-		<attrib name="serial">59846</attrib>
+		<attrib name="build">302</attrib>
+		<attrib name="serial">60837</attrib>
 	</attribs>
 	<database>
 		<attribs>
@@ -6250,7 +6250,7 @@ where d1.day=d2.day and d1.trading_system_id=d2.trading_system_id and d1.open_pr
 			<query>
 				<attribs>
 					<attrib name="name">Rename</attrib>
-					<attrib name="sqlCode">ALTER TABLE trading_system ADD session_config varchar(1024) not null</attrib>
+					<attrib name="sqlCode">ALTER TABLE trade ADD session_config varchar(1024) not null</attrib>
 				</attribs>
 				<modsConfig/>
 			</query>
@@ -8532,6 +8532,7 @@ order by t1.entry_date</attrib>
 									</row>
 								</list>
 							</idx>
+							<postSql/>
 						</mysql>
 					</SqlGenModule>
 				</modsConfig>
@@ -8559,7 +8560,7 @@ order by t1.entry_date</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
 						<attrib name="refTable">0</attrib>
-						<attrib name="type">5</attrib>
+						<attrib name="type">24</attrib>
 					</attribs>
 					<modsConfig/>
 				</field>
@@ -8815,7 +8816,7 @@ order by t1.entry_date</attrib>
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
-						<attrib name="name">gross_profit</attrib>
+						<attrib name="name">gross_return</attrib>
 						<attrib name="id">33531</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -8843,7 +8844,7 @@ order by t1.entry_date</attrib>
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
-						<attrib name="name">contracts</attrib>
+						<attrib name="name">max_contracts</attrib>
 						<attrib name="id">33679</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -8980,7 +8981,7 @@ order by t1.entry_date</attrib>
 				<rules/>
 				<attribs>
 					<attrib name="comment"/>
-					<attrib name="name">daily_return</attrib>
+					<attrib name="name">equity_bar</attrib>
 					<attrib name="id">48871</attrib>
 					<attrib name="schema"/>
 					<attrib name="tempPK"/>
@@ -9006,37 +9007,10 @@ order by t1.entry_date</attrib>
 									</row>
 								</list>
 							</idx>
+							<postSql>partition by hash(trade_id) partitions 16</postSql>
 						</mysql>
 					</SqlGenModule>
 				</modsConfig>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">true</attrib>
-							<attrib name="17">false</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">true</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">id</attrib>
-						<attrib name="id">48874</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">5</attrib>
-					</attribs>
-					<modsConfig/>
-				</field>
 				<field>
 					<fieldAttribs>
 						<attribs>
@@ -9055,13 +9029,13 @@ order by t1.entry_date</attrib>
 					<attribs>
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
-						<attrib name="refField">23277</attrib>
-						<attrib name="name">trading_system_id</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">trade_id</attrib>
 						<attrib name="id">48878</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">23274</attrib>
-						<attrib name="type">0</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">24</attrib>
 					</attribs>
 					<modsConfig/>
 				</field>
@@ -9084,12 +9058,12 @@ order by t1.entry_date</attrib>
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
-						<attrib name="name">day</attrib>
+						<attrib name="name">date</attrib>
 						<attrib name="id">48890</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
 						<attrib name="refTable">0</attrib>
-						<attrib name="type">5</attrib>
+						<attrib name="type">46</attrib>
 					</attribs>
 					<modsConfig/>
 					<docs>
@@ -9117,7 +9091,7 @@ order by t1.entry_date</attrib>
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
-						<attrib name="name">gross_profit</attrib>
+						<attrib name="name">gross_return</attrib>
 						<attrib name="id">48882</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -9145,7 +9119,7 @@ order by t1.entry_date</attrib>
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
-						<attrib name="name">trades</attrib>
+						<attrib name="name">contracts</attrib>
 						<attrib name="id">48886</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>

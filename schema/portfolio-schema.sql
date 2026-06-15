@@ -1,7 +1,7 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Portfolio Trader
 -- ===
--- === Build : 299
+-- === Build : 301
 -- ======================================================================
 
 CREATE TABLE portfolio
@@ -105,7 +105,7 @@ CREATE TABLE trading_filter
 
 CREATE TABLE trade
   (
-    id                     int           auto_increment,
+    id                     bigint        auto_increment,
     trading_system_id      int           not null,
     trade_type             char(2)       not null,
     entry_date             datetime      not null,
@@ -114,8 +114,8 @@ CREATE TABLE trade
     exit_date              datetime,
     exit_price             double,
     exit_label             varchar(64),
-    gross_profit           double,
-    contracts              int           not null,
+    gross_return           double,
+    max_contracts          int           not null,
     entry_date_at_broker   datetime,
     entry_price_at_broker  double,
     exit_date_at_broker    datetime,
@@ -131,21 +131,16 @@ CREATE INDEX tradeIDX1 ON trade(trading_system_id);
 
 -- ======================================================================
 
-CREATE TABLE daily_return
+CREATE TABLE equity_bar
   (
-    id                 int      auto_increment,
-    trading_system_id  int      not null,
-    day                int      not null,
-    gross_profit       double   not null,
-    trades             int      not null,
-
-    primary key(id),
-
-    foreign key(trading_system_id) references trading_system(id)
+    trade_id      bigint     not null,
+    date          datetime   not null,
+    gross_return  double     not null,
+    contracts     int        not null
   )
- ENGINE = InnoDB ;
+ ENGINE = InnoDB partition by hash(trade_id) partitions 16;
 
-CREATE INDEX daily_returnIDX1 ON daily_return(trading_system_id);
+CREATE INDEX equity_barIDX1 ON equity_bar(trade_id);
 
 -- ======================================================================
 
