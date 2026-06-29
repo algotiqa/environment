@@ -2,8 +2,8 @@
 
 <project version="2">
 	<attribs>
-		<attrib name="build">302</attrib>
-		<attrib name="serial">60837</attrib>
+		<attrib name="build">309</attrib>
+		<attrib name="serial">62541</attrib>
 	</attribs>
 	<database>
 		<attribs>
@@ -5223,6 +5223,17 @@
 					<elem>60</elem>
 					<elem>An index</elem>
 				</row>
+				<row>
+					<elem>60840</elem>
+					<elem>Idx2</elem>
+					<elem>{table}IDX2{cnt}</elem>
+					<elem>b</elem>
+					<elem>i</elem>
+					<elem>false</elem>
+					<elem>true</elem>
+					<elem>60</elem>
+					<elem>An index</elem>
+				</row>
 			</list>
 		</fieldAttribs>
 		<vars>
@@ -6234,8 +6245,8 @@
 			</query>
 			<query>
 				<attribs>
-					<attrib name="name">-UnNamed-</attrib>
-					<attrib name="sqlCode">ALTER TABLE trading_system drop column external</attrib>
+					<attrib name="name">Drop column</attrib>
+					<attrib name="sqlCode">ALTER TABLE trading_system drop column position_config</attrib>
 				</attribs>
 				<modsConfig/>
 			</query>
@@ -6250,7 +6261,7 @@ where d1.day=d2.day and d1.trading_system_id=d2.trading_system_id and d1.open_pr
 			<query>
 				<attribs>
 					<attrib name="name">Rename</attrib>
-					<attrib name="sqlCode">ALTER TABLE trade ADD session_config varchar(1024) not null</attrib>
+					<attrib name="sqlCode">ALTER TABLE trading_position ADD session_config varchar(1024) not null</attrib>
 				</attribs>
 				<modsConfig/>
 			</query>
@@ -6317,6 +6328,20 @@ order by t1.entry_date</attrib>
 				<attribs>
 					<attrib name="name">Update</attrib>
 					<attrib name="sqlCode">update trading_system set position_config = '{ &quot;units&quot;: 1 }'</attrib>
+				</attribs>
+				<modsConfig/>
+			</query>
+			<query>
+				<attribs>
+					<attrib name="name">Rename table</attrib>
+					<attrib name="sqlCode">RENAME table position_size to trading_position</attrib>
+				</attribs>
+				<modsConfig/>
+			</query>
+			<query>
+				<attribs>
+					<attrib name="name">Rename column</attrib>
+					<attrib name="sqlCode">ALTER TABLE trading_position change column margin margin_override double</attrib>
 				</attribs>
 				<modsConfig/>
 			</query>
@@ -6479,6 +6504,11 @@ order by t1.entry_date</attrib>
 										<elem>Idx1</elem>
 										<elem/>
 									</row>
+									<row>
+										<elem>60840</elem>
+										<elem>Idx2</elem>
+										<elem/>
+									</row>
 								</list>
 							</idx>
 						</mysql>
@@ -6489,6 +6519,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -6517,6 +6548,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -6545,6 +6577,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -6608,6 +6641,11 @@ order by t1.entry_date</attrib>
 										<elem>Idx1</elem>
 										<elem/>
 									</row>
+									<row>
+										<elem>60840</elem>
+										<elem>Idx2</elem>
+										<elem/>
+									</row>
 								</list>
 							</idx>
 						</mysql>
@@ -6618,6 +6656,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -6646,6 +6685,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -6674,6 +6714,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -6702,6 +6743,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -6748,6 +6790,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -6776,6 +6819,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -6804,6 +6848,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -6832,6 +6877,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -6860,6 +6906,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -6888,6 +6935,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -6916,6 +6964,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -6944,6 +6993,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -6972,6 +7022,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7026,6 +7077,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7054,6 +7106,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7082,6 +7135,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7110,6 +7164,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7138,6 +7193,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7166,6 +7222,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7194,6 +7251,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -7222,6 +7280,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -7250,6 +7309,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7296,6 +7356,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7324,6 +7385,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -7352,6 +7414,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7394,6 +7457,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7434,6 +7498,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7462,6 +7527,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7490,6 +7556,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7518,6 +7585,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7564,6 +7632,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7610,6 +7679,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -7638,6 +7708,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -7666,6 +7737,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -7694,6 +7766,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -7722,6 +7795,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -7750,6 +7824,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -7778,6 +7853,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7806,6 +7882,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7834,6 +7911,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7862,6 +7940,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -7882,62 +7961,6 @@ order by t1.entry_date</attrib>
 						<attrib name="onUpdate">n</attrib>
 						<attrib name="refTable">0</attrib>
 						<attrib name="type">8773</attrib>
-					</attribs>
-					<modsConfig/>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">position_model</attrib>
-						<attrib name="id">58659</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">58856</attrib>
-					</attribs>
-					<modsConfig/>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">position_config</attrib>
-						<attrib name="id">59054</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">11637</attrib>
 					</attribs>
 					<modsConfig/>
 				</field>
@@ -7981,6 +8004,11 @@ order by t1.entry_date</attrib>
 										<elem>Idx1</elem>
 										<elem/>
 									</row>
+									<row>
+										<elem>60840</elem>
+										<elem>Idx2</elem>
+										<elem/>
+									</row>
 								</list>
 							</idx>
 						</mysql>
@@ -7991,6 +8019,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -8019,6 +8048,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8047,6 +8077,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8075,6 +8106,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8103,6 +8135,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8131,6 +8164,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8159,6 +8193,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8187,6 +8222,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8215,6 +8251,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8243,6 +8280,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8271,6 +8309,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8299,6 +8338,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8327,6 +8367,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8355,6 +8396,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8383,6 +8425,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8411,6 +8454,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8439,6 +8483,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8467,6 +8512,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8487,6 +8533,317 @@ order by t1.entry_date</attrib>
 						<attrib name="onUpdate">n</attrib>
 						<attrib name="refTable">0</attrib>
 						<attrib name="type">6</attrib>
+					</attribs>
+					<modsConfig/>
+				</field>
+			</table>
+			<table>
+				<vars>
+					<list>
+						<header>
+							<elem>name</elem>
+							<elem>type</elem>
+							<elem>value</elem>
+							<elem>descr</elem>
+						</header>
+					</list>
+				</vars>
+				<triggers/>
+				<rules/>
+				<attribs>
+					<attrib name="comment"/>
+					<attrib name="name">trading_position</attrib>
+					<attrib name="id">60843</attrib>
+					<attrib name="schema"/>
+					<attrib name="tempPK"/>
+					<attrib name="ghost">false</attrib>
+					<attrib name="tempFK"/>
+					<attrib name="tempOther"/>
+					<attrib name="sqlCommands"/>
+				</attribs>
+				<modsConfig>
+					<SqlGenModule>
+						<mysql>
+							<idx type="l">
+								<list>
+									<header>
+										<elem type="i">id</elem>
+										<elem type="s">index</elem>
+										<elem type="s">name</elem>
+									</header>
+									<row>
+										<elem>340</elem>
+										<elem>Idx1</elem>
+										<elem/>
+									</row>
+									<row>
+										<elem>60840</elem>
+										<elem>Idx2</elem>
+										<elem/>
+									</row>
+								</list>
+							</idx>
+						</mysql>
+					</SqlGenModule>
+				</modsConfig>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="60840">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">false</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">true</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">23277</attrib>
+						<attrib name="name">trading_system_id</attrib>
+						<attrib name="id">60848</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">23274</attrib>
+						<attrib name="type">0</attrib>
+					</attribs>
+					<modsConfig/>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">initial_capital</attrib>
+						<attrib name="id">60853</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">32779</attrib>
+					</attribs>
+					<modsConfig/>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="60840">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">ruin_percentage</attrib>
+						<attrib name="id">61055</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">32779</attrib>
+					</attribs>
+					<modsConfig/>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">margin_override</attrib>
+						<attrib name="id">61057</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">32779</attrib>
+					</attribs>
+					<modsConfig/>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">max_units</attrib>
+						<attrib name="id">61060</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">5</attrib>
+					</attribs>
+					<modsConfig/>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">risk_per_unit</attrib>
+						<attrib name="id">61263</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">8773</attrib>
+					</attribs>
+					<modsConfig/>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="60840">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">risk_value</attrib>
+						<attrib name="id">61468</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">32779</attrib>
+					</attribs>
+					<modsConfig/>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">model</attrib>
+						<attrib name="id">58659</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">58856</attrib>
+					</attribs>
+					<modsConfig/>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="60840">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">config</attrib>
+						<attrib name="id">61472</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">11637</attrib>
 					</attribs>
 					<modsConfig/>
 				</field>
@@ -8530,6 +8887,11 @@ order by t1.entry_date</attrib>
 										<elem>Idx1</elem>
 										<elem/>
 									</row>
+									<row>
+										<elem>60840</elem>
+										<elem>Idx2</elem>
+										<elem/>
+									</row>
 								</list>
 							</idx>
 							<postSql/>
@@ -8541,6 +8903,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">true</attrib>
 							<attrib name="17">false</attrib>
@@ -8569,6 +8932,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8597,6 +8961,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8634,6 +8999,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8662,6 +9028,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8690,6 +9057,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -8718,6 +9086,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -8746,6 +9115,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -8774,6 +9144,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -8802,6 +9173,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -8830,6 +9202,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -8858,6 +9231,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -8886,6 +9260,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -8914,6 +9289,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -8942,6 +9318,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
@@ -9005,6 +9382,11 @@ order by t1.entry_date</attrib>
 										<elem>Idx1</elem>
 										<elem/>
 									</row>
+									<row>
+										<elem>60840</elem>
+										<elem>Idx2</elem>
+										<elem/>
+									</row>
 								</list>
 							</idx>
 							<postSql>partition by hash(trade_id) partitions 16</postSql>
@@ -9016,6 +9398,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -9044,6 +9427,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -9077,6 +9461,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -9105,6 +9490,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -9168,6 +9554,11 @@ order by t1.entry_date</attrib>
 										<elem>Idx1</elem>
 										<elem/>
 									</row>
+									<row>
+										<elem>60840</elem>
+										<elem>Idx2</elem>
+										<elem/>
+									</row>
 								</list>
 							</idx>
 						</mysql>
@@ -9178,6 +9569,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">true</attrib>
 							<attrib name="17">false</attrib>
@@ -9206,6 +9598,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -9234,6 +9627,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -9262,6 +9656,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -9335,6 +9730,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">true</attrib>
 							<attrib name="17">false</attrib>
@@ -9363,6 +9759,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -9391,6 +9788,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -9419,6 +9817,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -9447,6 +9846,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
@@ -9475,6 +9875,7 @@ order by t1.entry_date</attrib>
 						<attribs>
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
+							<attrib name="60840">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>

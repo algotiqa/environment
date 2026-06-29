@@ -1,7 +1,7 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Portfolio Trader
 -- ===
--- === Build : 301
+-- === Build : 308
 -- ======================================================================
 
 CREATE TABLE portfolio
@@ -61,8 +61,6 @@ CREATE TABLE trading_system
     in_sample_from      int             not null,
     in_sample_to        int             not null,
     engine_code         varchar(16)     not null,
-    position_model      char(2)         not null,
-    position_config     varchar(1024)   not null,
 
     primary key(id),
 
@@ -94,6 +92,26 @@ CREATE TABLE trading_filter
     drawdown_enabled   tinyint    not null,
     drawdown_min       smallint   not null,
     drawdown_max       smallint   not null,
+
+    primary key(trading_system_id),
+
+    foreign key(trading_system_id) references trading_system(id)
+  )
+ ENGINE = InnoDB ;
+
+-- ======================================================================
+
+CREATE TABLE trading_position
+  (
+    trading_system_id  int,
+    initial_capital    double          not null,
+    ruin_percentage    double          not null,
+    margin_override    double          not null,
+    max_units          int             not null,
+    risk_per_unit      varchar(16)     not null,
+    risk_value         double          not null,
+    model              char(2)         not null,
+    config             varchar(1024)   not null,
 
     primary key(trading_system_id),
 
