@@ -1,1 +1,7 @@
 *.iml
+certificate/*.crt
+certificate/*.csr
+certificate/*.key
+certificate/*.p12
+identity-provider/config/*.crt
+identity-provider/config/*.key

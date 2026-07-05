@@ -2,8 +2,8 @@
 
 <project version="2">
 	<attribs>
-		<attrib name="build">309</attrib>
-		<attrib name="serial">62541</attrib>
+		<attrib name="build">310</attrib>
+		<attrib name="serial">63348</attrib>
 	</attribs>
 	<database>
 		<attribs>
@@ -1347,7 +1347,7 @@
 					<attribs>
 						<attrib name="name">broker_product</attrib>
 						<attrib name="colorId">18080</attrib>
-						<attrib name="locY">381</attrib>
+						<attrib name="locY">435</attrib>
 						<attrib name="details">-</attrib>
 						<attrib name="locX">630</attrib>
 					</attribs>
@@ -1360,9 +1360,9 @@
 					<attribs>
 						<attrib name="name">currency</attrib>
 						<attrib name="colorId">18080</attrib>
-						<attrib name="locY">800</attrib>
+						<attrib name="locY">781</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">496</attrib>
+						<attrib name="locX">475</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
@@ -1412,9 +1412,9 @@
 					<attribs>
 						<attrib name="name">exchange</attrib>
 						<attrib name="colorId">18080</attrib>
-						<attrib name="locY">834</attrib>
+						<attrib name="locY">815</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">251</attrib>
+						<attrib name="locX">221</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
@@ -1438,13 +1438,26 @@
 					<attribs>
 						<attrib name="name">currency_history</attrib>
 						<attrib name="colorId">18080</attrib>
-						<attrib name="locY">834</attrib>
+						<attrib name="locY">796</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">733</attrib>
+						<attrib name="locX">707</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
 						<table id="51981"/>
+					</tables>
+				</erEntity>
+				<erEntity>
+					<attribs>
+						<attrib name="name">outbox</attrib>
+						<attrib name="colorId">18080</attrib>
+						<attrib name="locY">818</attrib>
+						<attrib name="details">-</attrib>
+						<attrib name="locX">15</attrib>
+					</attribs>
+					<modsConfig/>
+					<tables>
+						<table id="57286"/>
 					</tables>
 				</erEntity>
 			</erView>
@@ -6401,9 +6414,9 @@ order by t1.entry_date</attrib>
 					<attribs>
 						<attrib name="name">trading_system</attrib>
 						<attrib name="colorId">42618</attrib>
-						<attrib name="locY">59</attrib>
+						<attrib name="locY">20</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">350</attrib>
+						<attrib name="locX">344</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
@@ -6438,11 +6451,37 @@ order by t1.entry_date</attrib>
 				</erEntity>
 				<erEntity>
 					<attribs>
-						<attrib name="name">daily_return</attrib>
+						<attrib name="name">live_period</attrib>
 						<attrib name="colorId">42618</attrib>
-						<attrib name="locY">338</attrib>
+						<attrib name="locY">498</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">44</attrib>
+						<attrib name="locX">27</attrib>
+					</attribs>
+					<modsConfig/>
+					<tables>
+						<table id="54804"/>
+					</tables>
+				</erEntity>
+				<erEntity>
+					<attribs>
+						<attrib name="name">trading_position</attrib>
+						<attrib name="colorId">42618</attrib>
+						<attrib name="locY">242</attrib>
+						<attrib name="details">-</attrib>
+						<attrib name="locX">26</attrib>
+					</attribs>
+					<modsConfig/>
+					<tables>
+						<table id="60843"/>
+					</tables>
+				</erEntity>
+				<erEntity>
+					<attribs>
+						<attrib name="name">equity_bar</attrib>
+						<attrib name="colorId">42618</attrib>
+						<attrib name="locY">767</attrib>
+						<attrib name="details">-</attrib>
+						<attrib name="locX">616</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
@@ -6451,15 +6490,15 @@ order by t1.entry_date</attrib>
 				</erEntity>
 				<erEntity>
 					<attribs>
-						<attrib name="name">live_period</attrib>
+						<attrib name="name">outbox</attrib>
 						<attrib name="colorId">42618</attrib>
-						<attrib name="locY">641</attrib>
+						<attrib name="locY">675</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">45</attrib>
+						<attrib name="locX">48</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
-						<table id="54804"/>
+						<table id="58623"/>
 					</tables>
 				</erEntity>
 			</erView>
@@ -11200,13 +11239,26 @@ WHERE
 					<attribs>
 						<attrib name="name">download_job</attrib>
 						<attrib name="colorId">43889</attrib>
-						<attrib name="locY">681</attrib>
+						<attrib name="locY">675</attrib>
 						<attrib name="details">-</attrib>
-						<attrib name="locX">513</attrib>
+						<attrib name="locX">382</attrib>
 					</attribs>
 					<modsConfig/>
 					<tables>
 						<table id="47360"/>
+					</tables>
+				</erEntity>
+				<erEntity>
+					<attribs>
+						<attrib name="name">outbox</attrib>
+						<attrib name="colorId">43889</attrib>
+						<attrib name="locY">720</attrib>
+						<attrib name="details">-</attrib>
+						<attrib name="locX">677</attrib>
+					</attribs>
+					<modsConfig/>
+					<tables>
+						<table id="58637"/>
 					</tables>
 				</erEntity>
 			</erView>
