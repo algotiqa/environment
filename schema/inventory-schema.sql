@@ -1,7 +1,7 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Inventory Server
 -- ===
--- === Build : 294
+-- === Build : 312
 -- ======================================================================
 
 CREATE TABLE trading_session
@@ -190,9 +190,9 @@ CREATE TABLE broker_product
     username            varchar(32)   not null,
     symbol              varchar(16)   not null,
     name                varchar(64)   not null,
-    point_value         float         not null,
-    cost_per_operation  float         not null,
-    margin_value        float         not null,
+    point_value         double        not null,
+    cost_per_operation  double        not null,
+    margin_value        double        not null,
     increment           double        not null,
     market_type         char(2)       not null,
     product_type        char(2)       not null,

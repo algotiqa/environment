@@ -1,7 +1,7 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Data Collector
 -- ===
--- === Build : 296
+-- === Build : 312
 -- ======================================================================
 
 CREATE TABLE data_product
@@ -52,8 +52,8 @@ CREATE TABLE broker_product
     connection_code     varchar(8)    not null,
     symbol              varchar(16)   not null,
     name                varchar(64)   not null,
-    point_value         float         not null,
-    cost_per_operation  float         not null,
+    point_value         double        not null,
+    cost_per_operation  double        not null,
     currency_code       varchar(16)   not null,
 
     primary key(id),
@@ -84,7 +84,7 @@ CREATE TABLE data_instrument
   (
     id                  int           auto_increment,
     data_block_id       int,
-    data_product_id     int           not null,
+    data_product_id     int           not null zerofill,
     symbol              varchar(16)   not null,
     name                varchar(64)   not null,
     expiration_date     datetime,

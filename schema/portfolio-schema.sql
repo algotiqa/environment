@@ -1,7 +1,7 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Portfolio Trader
 -- ===
--- === Build : 308
+-- === Build : 312
 -- ======================================================================
 
 CREATE TABLE portfolio
@@ -28,9 +28,9 @@ CREATE TABLE trading_system
     data_symbol         varchar(16)     not null,
     broker_product_id   int             not null,
     broker_symbol       varchar(16)     not null,
-    point_value         float           not null,
-    cost_per_operation  float           not null,
-    margin_value        float           not null,
+    point_value         double          not null,
+    cost_per_operation  double          not null,
+    margin_value        double          not null,
     increment           double          not null,
     market_type         char(2)         not null,
     currency_id         int             not null,
@@ -103,15 +103,15 @@ CREATE TABLE trading_filter
 
 CREATE TABLE trading_position
   (
-    trading_system_id  int,
-    initial_capital    double          not null,
-    ruin_percentage    double          not null,
-    margin_override    double          not null,
-    max_units          int             not null,
-    risk_per_unit      varchar(16)     not null,
-    risk_value         double          not null,
-    model              char(2)         not null,
-    config             varchar(1024)   not null,
+    trading_system_id   int,
+    initial_capital     double          not null,
+    max_tol_drawd_perc  double          not null,
+    margin_override     double          not null,
+    max_units           int             not null,
+    risk_per_unit       varchar(16)     not null,
+    risk_value          double          not null,
+    model               char(2)         not null,
+    config              varchar(1024)   not null,
 
     primary key(trading_system_id),
 
