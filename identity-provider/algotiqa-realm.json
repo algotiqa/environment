@@ -809,10 +809,10 @@
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "https://algotiqa-server:8443/*"
+        "https://algotiqa:8443/*"
       ],
       "webOrigins": [
-        "https://algotiqa-server:8443"
+        "https://algotiqa:8443"
       ],
       "notBefore": 0,
       "bearerOnly": false,

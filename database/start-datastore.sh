@@ -20,7 +20,7 @@ runPodmanContainer(){
 		--name ${CONTAINER_NAME} \
 		--restart always \
 		-v ${DIR}/collector-data:/var/lib/postgresql/data \
-		-p 3410:5432 \
+		-p 5432:5432 \
 		-e POSTGRES_PASSWORD=postgres \
 		docker://timescale/timescaledb:2.24.0-pg16
 

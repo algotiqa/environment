@@ -3,7 +3,7 @@
 dbName=event
 dbUser=admin
 dbPass=admin
-dbPort=3403
+dbPort=3306
 
 mysql --user=root --password=root --host=127.0.0.1 --port=$dbPort << EOF
 drop database if exists ${dbName}; 

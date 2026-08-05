@@ -3,7 +3,7 @@
 dbName=inventory
 dbUser=admin
 dbPass=admin
-dbPort=3400
+dbPort=3306
 
 mysql --user=root --password=root --host=127.0.0.1 --port=$dbPort << EOF
 drop database if exists ${dbName};

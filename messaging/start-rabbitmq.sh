@@ -20,8 +20,8 @@ runPodmanContainer(){
 		--name ${CONTAINER_NAME} \
 		--restart always \
 		--hostname algotiqa \
-		-p 8451:15672 \
-		-p 8450:5672 \
+		-p 15672:15672 \
+		-p 5672:5672 \
 		-e RABBITMQ_DEFAULT_USER=admin \
 		-e RABBITMQ_DEFAULT_PASS=admin \
 		docker://rabbitmq:3.12.14-management

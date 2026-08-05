@@ -1,7 +1,7 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Portfolio Trader
 -- ===
--- === Build : 312
+-- === Build : 316
 -- ======================================================================
 
 CREATE TABLE portfolio
@@ -106,7 +106,7 @@ CREATE TABLE trading_position
     trading_system_id   int,
     initial_capital     double          not null,
     max_tol_drawd_perc  double          not null,
-    margin_override     double          not null,
+    margin_override     double,
     max_units           int             not null,
     risk_per_unit       varchar(16)     not null,
     risk_value          double          not null,

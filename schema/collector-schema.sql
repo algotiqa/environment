@@ -1,7 +1,7 @@
 -- ======================================================================
 -- ===   Sql Script for Database : Data Collector
 -- ===
--- === Build : 312
+-- === Build : 315
 -- ======================================================================
 
 CREATE TABLE data_product
@@ -84,7 +84,7 @@ CREATE TABLE data_instrument
   (
     id                  int           auto_increment,
     data_block_id       int,
-    data_product_id     int           not null zerofill,
+    data_product_id     int           not null,
     symbol              varchar(16)   not null,
     name                varchar(64)   not null,
     expiration_date     datetime,

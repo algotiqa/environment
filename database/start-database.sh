@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIR="$( cd "$(dirname "$0")" ; pwd -P )"
-CONTAINER_NAME="algotiqa-portfolio-db"
+CONTAINER_NAME="algotiqa-database"
 
 runPodmanContainer(){
     if [[ $(podman ps --filter "name=^/$CONTAINER_NAME$" --format '{{.Names}}') == ${CONTAINER_NAME} ]]; then
@@ -20,9 +20,9 @@ runPodmanContainer(){
 		--name ${CONTAINER_NAME} \
 		--restart always \
 		-e MYSQL_ROOT_PASSWORD=root \
-		-v ${DIR}/portfolio-db:/var/lib/mysql \
-		-p 3401:3306 \
-		docker://mysql:5.7.44
+		-v ${DIR}/database:/var/lib/mysql \
+		-p 3306:3306 \
+		docker://mysql:5.7
 
     if [[ $? == 0 ]]; then
         echo
