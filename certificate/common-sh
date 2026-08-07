@@ -1,0 +1,70 @@
+#!/bin/sh
+
+#============================================================================================================================
+
+generateCA() {
+	# Create a key for the CA
+	openssl genrsa -out ca.key 2048
+
+	# Generate CA certificate
+	openssl req -new -x509 -days 20000 -key ca.key -subj "/C=EU/ST=Italy/L=Rome/O=Algotiqa/CN=algotiqa.org" -out ca.crt
+	rm ca.srl
+}
+
+#============================================================================================================================
+
+generate() {
+	NAME=$1
+	DEST=$2
+
+	# Create a key for the server
+	openssl genrsa -out server.key 2048
+
+	# Generate the Certificate Signing Request
+	openssl req -new -key server.key -out server.csr -subj "/C=EU/ST=Italy/L=Rome/O=Algotiqa/OU=AlgotiqaPlatform/CN=${NAME}"
+
+	# Sign it with the CA
+
+	echo "subjectAltName=DNS:${NAME}" > altsubj.ext
+#	echo "subjectAltName=IP:127.0.0.1" > altsubj.ext
+
+	openssl x509  -req -in server.csr \
+		-CA ca.crt -CAkey ca.key \
+		-days 20000 -sha256 -CAcreateserial \
+		-extfile altsubj.ext \
+		-out server.crt
+
+	rm altsubj.ext
+
+	chmod ugo+r server.key
+	mv server.key $DEST/
+	mv server.crt $DEST/
+	cp ca.crt     $DEST/
+	rm server.csr
+}
+
+#============================================================================================================================
+
+generateBrowser() {
+	# Create a key for the client
+	openssl genrsa -out browser.key 2048
+
+	# Generate the Certificate Signing Request
+	openssl req -new -key browser.key -out browser.csr -subj "/C=EU/ST=Italy/L=Rome/O=Algotiqa/OU=AlgotiqaBrowser/CN=algotiqa"
+
+	# Sign it with the CA
+
+	echo "subjectAltName=DNS:algotiqa" > altsubj.ext
+
+	openssl x509  -req -in browser.csr \
+		-CA ca.crt -CAkey ca.key \
+		-days 20000 -sha256 -CAcreateserial \
+		-extfile altsubj.ext \
+		-out browser.crt
+
+	rm altsubj.ext
+
+	openssl pkcs12 -export -inkey browser.key -in browser.crt -out browser.p12
+}
+
+#============================================================================================================================
