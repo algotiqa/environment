@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIR="$( cd "$(dirname "$0")" ; pwd -P )"
-CONTAINER_NAME="algotiqa-rabbitmq"
+CONTAINER_NAME="myalgotiqa-rabbitmq"
 
 runPodmanContainer(){
     if [[ $(podman ps --filter "name=^/$CONTAINER_NAME$" --format '{{.Names}}') == ${CONTAINER_NAME} ]]; then
