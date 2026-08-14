@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+
+  keycloak:
+     container_name: myalgotiqa-keycloak-be
+     image: quay.io/keycloak/keycloak:26.7.1
+     restart: always
+     command:
+      - "start"
+      - "--https-certificate-file=/config/server.crt"
+      - "--https-certificate-key-file=/config/server.key"
+      - "--hostname=https://algotiqa:8443/auth"
+      - "--hostname-admin=https://algotiqa:8443/auth"
+      - "--proxy-headers=forwarded"
+     volumes:
+       - ./config:/config
+     environment:
+       - KEYCLOAK_ADMIN=admin
+       - KEYCLOAK_ADMIN_PASSWORD=admin
+       - KC_DB=mysql
+       - KC_DB_URL=jdbc:mysql://keycloak-db:3306/keycloak?serverTimezone=UTC
+       - KC_DB_USERNAME=admin
+       - KC_DB_PASSWORD=admin
+     ports:
+       - 8448:8443
+     depends_on:
+       - keycloak-db
+
+  keycloak-db:
+    image: mysql:9.7.2
+    container_name: myalgotiqa-keycloak-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: keycloak
+    volumes:
+      - ./database:/var/lib/mysql
