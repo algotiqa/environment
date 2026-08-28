@@ -4,14 +4,15 @@ services:
 
   keycloak:
     container_name: myalgotiqa-keycloak-be
-    image: quay.io/keycloak/keycloak:26.7.1
+    image: quay.io/keycloak/keycloak:26.7.2
     restart: always
     command:
       - "start"
       - "--https-certificate-file=/config/server.crt"
       - "--https-certificate-key-file=/config/server.key"
+      # If keycloak receives a request that doesn't contain 'algotiqa' as hostname,
+      # it will redirect the browser to this hostname (for protection)
       - "--hostname=https://algotiqa:8443/auth"
-      - "--hostname-admin=https://algotiqa:8443/auth"
       - "--proxy-headers=forwarded"
     volumes:
       - ./config:/config
@@ -23,7 +24,7 @@ services:
       - KC_DB_USERNAME=admin
       - KC_DB_PASSWORD=admin
     ports:
-      - 8448:8443
+      - "8448:8443"
     depends_on:
       - keycloak-db
 
