@@ -2,6 +2,8 @@
 
 Set of infrastructure scripts to deploy the Algotiqa platform.
 
+**Note:** the main documentation of the platform is located [HERE](https://github.com/algotiqa/docs).
+
 ## License
 
 This project is distributed under the **Elastic License 2.0 (ELv2)**.
